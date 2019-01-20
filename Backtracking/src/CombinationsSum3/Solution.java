@@ -18,41 +18,59 @@ Input: k = 3, n = 7
 Output: [[1,2,4]]
 */
 public class Solution {
-	
-	// key: for each element there are two options. Choose and not choose. Use backtracking to continue
-	// with the every single element of the temporary list.
-     public List<List<Integer>> combine(int n, int k) {
-    	 List<List<Integer>> result = new ArrayList<List<Integer>>();
-    	 List<Integer> temp = new ArrayList<Integer>();
-    	 backtrack(result,temp,1,n,k);
-    	 return result;
-    }
-     
-     private void backtrack(List<List<Integer>> result, List<Integer> temp, int start, int n,int k) {
-    	 if(temp.size() ==k){  
-    		 result.add(new ArrayList<Integer>(temp));
-    	 } else {
-    		 for(int i = start ; i<=n; i++){
-    			 if(temp.contains(i)) continue;
-    			 temp.add(i); //choose
-    			 backtrack(result,temp,i+1,n,k);
-    			 temp.remove(temp.size()-1); //not choose
-    		 }
-    	 }
-     }
-     
-     public static void main(String[] args){
-    	 Solution s = new Solution();
-    	 print(s.combine(4, 2));
-     }
+	  public List<List<Integer>> combinationSum3(int k, int n) {
+	    	
+	    	List<List<Integer>> result = new ArrayList<List<Integer>>();
+	    	List<Integer> temp = new ArrayList<Integer>();
+	    	
+	    	backtrack(result,temp,k,n, 1);
+			
+	    	return result;
+	        
+	    }
+	    
+	    
+	    public void backtrack(List<List<Integer>> result, List<Integer> temp, int k, int n,int start){
+	    	if(temp.size() == k ){
+	    		if(sum(temp)==n){
+	    		result.add(new ArrayList<Integer>(temp));
+	    		}
+	    	} else {
+	    		
+	    		for(int i = start ; i<=9 ; i++){		
+	    			temp.add(i);
+	    			backtrack(result, temp, k,n, i+1);
+	    			temp.remove(temp.size()-1);
+	    			
+	    		}
+	    	}
+	    }
 
-     private static void print(List<List<Integer>> result) {
- 		for(List<Integer> a :result ){			
- 			for(Integer b: a){
- 				System.out.print(b+ ", ");
- 			}
- 			System.out.println();
- 		}
- 		
- 	}
+
+		private int sum(List<Integer> temp) {
+			int sum = 0 ;
+			for(Integer a : temp) {
+				sum = sum + a;
+			}
+			return sum;
+		}
+		
+		
+		
+		 public static void main (String[] args){
+			 Solution s = new Solution();
+			 
+			 print(s.combinationSum3(2, 5));
+		 }
+
+
+		private static void print(List<List<Integer>> combinationSum3) {
+			for(List<Integer> a :combinationSum3 ){
+				for(Integer b: a){
+					System.out.print(b+ ", ");
+				}
+				System.out.println();
+			}
+			
+		}
 }
