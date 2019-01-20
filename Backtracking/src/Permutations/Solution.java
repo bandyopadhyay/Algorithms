@@ -25,7 +25,7 @@ public class Solution {
 					continue;
 				temp.add(nums[i]); // choose
 				backtrack(result, temp, nums);
-				temp.remove(temp.size() - 1); // not choose
+				temp.remove(temp.size() - 1); //do not choose
 			}
 		}
 	}
