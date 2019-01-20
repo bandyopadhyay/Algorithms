@@ -41,7 +41,7 @@ public class Solution {
 			// if(temp.contains(nums[i])) continue;
 			temp.add(nums[i]); // choose
 			backtrack(result, temp, nums, i + 1);
-			temp.remove(temp.size() - 1); // not choose
+			temp.remove(temp.size() - 1); //do not choose
 		}
 	}
 
