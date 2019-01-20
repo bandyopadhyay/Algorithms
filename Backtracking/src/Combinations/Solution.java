@@ -39,7 +39,7 @@ public class Solution {
     			 if(temp.contains(i)) continue;
     			 temp.add(i); //choose
     			 backtrack(result,temp,i+1,n,k);
-    			 temp.remove(temp.size()-1); //not choose
+    			 temp.remove(temp.size()-1); //do not choose
     		 }
     	 }
      }
