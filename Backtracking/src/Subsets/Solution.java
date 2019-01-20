@@ -5,7 +5,7 @@ import java.util.List;
 
 /*
 https://leetcode.com/problems/subsets/
- 78
+78. Subsets
  Given a set of distinct integers, nums, return all possible subsets (the power set).
 
 Note: The solution set must not contain duplicate subsets.
