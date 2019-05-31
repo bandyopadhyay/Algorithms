@@ -1,1 +1,1 @@
-For leetcode practise
+For algorithm practise
