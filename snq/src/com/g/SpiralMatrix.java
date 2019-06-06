@@ -1,4 +1,4 @@
-package com.practise;
+package com.g;
 
 import java.util.*;
 
