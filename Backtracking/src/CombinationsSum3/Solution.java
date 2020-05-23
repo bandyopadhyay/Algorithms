@@ -23,8 +23,9 @@ public class Solution {
 	    	List<List<Integer>> result = new ArrayList<List<Integer>>();
 	    	List<Integer> temp = new ArrayList<Integer>();
 	    	
-	    	backtrack(result,temp,k,n, 1);
+	    	backtrack(result,temp,k,n, 2);
 			
+
 	    	return result;
 	        
 	    }
